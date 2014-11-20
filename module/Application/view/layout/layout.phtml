@@ -1,0 +1,58 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('SjServ'))->setSeparator(' - ')->setAutoEscape(false); ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . '/css/style.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                        ->prependStylesheet($this->basePath() . '/css/justified-nav.css')
+        ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+            ->prependFile($this->basePath() . '/js/jquery.min.js')
+            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+        ; ?>
+
+    </head>
+
+    <body>
+    <div id="linearBg2">
+    <div class="container">
+        <div class="masthead">
+            <h3 class="text-muted"><img src="../../img/test_stev.png"/> SjServ</h3>
+            <ul class="nav nav-justified">
+                <li class="active"><a href="/"><?php echo $this->translate('Home');?></a></li>
+                <li><a href="#"><?php echo $this->translate('Tutoriels');?></a></li>
+                <li><a href="application/cv/index"><?php echo $this->translate('CV');?></a></li>
+                <li><a href="#"><?php echo $this->translate('Projets');?></a></li>
+                <li><a href="#"><?php echo $this->translate('Passions');?></a></li>
+                <li><a href="#"><?php echo $this->translate('Profil');?></a></li>
+                <li><a href="#"><?php echo $this->translate('Témoignages');?></a></li>
+                <li><a href="#"><?php echo $this->translate('A Propos');?></a></li>
+                <li><a href="mailto:steven.jalabert@gmail.com"><?php echo $this->translate('Me Contacter');?></a></li>
+            </ul>
+        </div>
+        <div class="container" style="margin-left:-1.2%;">
+            <?php echo $this->content; ?>
+            <hr>
+            <footer>
+                <p>&copy; 2013 - <?php echo date('Y') ?> SJServ. + Zend Framework. <?php echo $this->translate('All rights reserved.') ?></p>
+            </footer>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+    </div>
+    </body>
+</html>
