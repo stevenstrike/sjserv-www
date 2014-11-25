@@ -8,6 +8,5 @@ nbproject
 .settings
 composer.lock
 vendor/bin
-composer.json
 composer.phar
 init_autoloader.php
