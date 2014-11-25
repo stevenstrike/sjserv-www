@@ -9,4 +9,3 @@ nbproject
 composer.lock
 vendor/bin
 composer.phar
-init_autoloader.php
