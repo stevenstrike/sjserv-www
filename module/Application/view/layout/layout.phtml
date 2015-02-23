@@ -32,20 +32,15 @@
     <div id="linearBg2">
     <div class="container">
         <div class="masthead">
-            <h3 class="text-muted"><img src="../../img/test_stev.png"/> SjServ</h3>
-            <ul class="nav nav-justified">
-                <li class="active"><a href="/"><?php echo $this->translate('Home');?></a></li>
-                <li><a href="#"><?php echo $this->translate('Tutoriels');?></a></li>
-                <li><a href="application/cv/index"><?php echo $this->translate('CV');?></a></li>
-                <li><a href="#"><?php echo $this->translate('Projets');?></a></li>
-                <li><a href="#"><?php echo $this->translate('Passions');?></a></li>
-                <li><a href="#"><?php echo $this->translate('Profil');?></a></li>
-                <li><a href="#"><?php echo $this->translate('Témoignages');?></a></li>
-                <li><a href="#"><?php echo $this->translate('A Propos');?></a></li>
-                <li><a href="mailto:steven.jalabert@gmail.com"><?php echo $this->translate('Me Contacter');?></a></li>
-            </ul>
+            <div id="headmenu">
+                <?php
+                $partial = array('application/navigation/topnav.phtml', 'default');
+                $this->navigation('navigation')->menu()->setPartial($partial);
+                echo $this->navigation('navigation')->menu()->render();
+                ?>
+            </div>
         </div>
-        <div class="container" style="margin-left:-1.2%;">
+        <div class="container" style="margin-left:-1.2%;margin-top: 50px;">
             <?php echo $this->content; ?>
             <hr>
             <footer>

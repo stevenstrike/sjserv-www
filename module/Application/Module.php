@@ -11,6 +11,10 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\View\HelperPluginManager;
+use Zend\Permissions\Acl\Acl;
+use Zend\Permissions\Acl\Role\GenericRole;
+use Zend\Permissions\Acl\Resource\GenericResource;
 
 class Module
 {
@@ -34,6 +38,35 @@ class Module
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
             ),
+        );
+    }
+
+    public function getViewHelperConfig()
+    {
+        return array(
+            'factories' => array(
+                // This will overwrite the native navigation helper
+                'navigation' => function(HelperPluginManager $pm) {
+                    // Setup ACL:
+                    $acl = new Acl();
+                    $acl->addRole(new GenericRole('member'));
+                    $acl->addRole(new GenericRole('admin'));
+                    $acl->addResource(new GenericResource('mvc:admin'));
+                    $acl->addResource(new GenericResource('mvc:community.account'));
+                    $acl->allow('member', 'mvc:community.account');
+                    $acl->allow('admin', null);
+
+                    // Get an instance of the proxy helper
+                    $navigation = $pm->get('Zend\View\Helper\Navigation');
+
+                    // Store ACL and role in the proxy helper:
+                    $navigation->setAcl($acl)
+                        ->setRole('member');
+
+                    // Return the new navigation helper instance
+                    return $navigation;
+                }
+            )
         );
     }
 }
