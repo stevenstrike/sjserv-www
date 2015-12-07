@@ -36,7 +36,7 @@ div.container a.brand {
     padding: 8px 20px 12px 40px;
 }*/
 
-/*Green Gradient effect*/
+/*Blue Gradient effect*/
 body
 {
     background: #f7fbfc; /* Old browsers */
@@ -47,7 +47,7 @@ body
     background: -ms-linear-gradient(top,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
-
+    height:100%;
 }
 
 .white-color

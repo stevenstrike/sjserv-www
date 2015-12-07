@@ -11,19 +11,19 @@ return array(
                 'route' => 'home',
             ),
             'Tutorial_menu' => array(
-                'label' => $translator->translate('Tutorials'),
+                'label' => $translator->translate('Guides'),
                 'route' => 'home',
                 'pages' => array(
-                    'filler1' => array(
-                        'label' => 'Filler #1',
+                    'oss' => array(
+                        'label' => $translator->translate('OpenSource'),
                         'route' => 'home',
                     ),
-                    'filler2' => array(
-                        'label' => 'Filler #2',
+                    'linux' => array(
+                        'label' => $translator->translate('Linux'),
                         'route' => 'home',
                     ),
-                    'filler3' => array(
-                        'label' => 'Filler #3',
+                    'security' => array(
+                        'label' => $translator->translate('Security'),
                         'route' => 'home',
                     ),
                     'filler4' => array(
@@ -40,12 +40,12 @@ return array(
                 'label' => $translator->translate('Projects'),
                 'route' => 'home',
                 'pages' => array(
-                    'filler1' => array(
-                        'label' => 'Filler #1',
+                    'jabboid' => array(
+                        'label' => 'Jabboid',
                         'route' => 'home',
                     ),
-                    'filler2' => array(
-                        'label' => 'Filler #2',
+                    'startmenucleaner' => array(
+                        'label' => 'Start Menu Cleaner',
                         'route' => 'home',
                     ),
                     'filler3' => array(
@@ -102,16 +102,8 @@ return array(
                     ),
                 ),
             ),
-            'Testimonials_menu' => array(
-                'label' => $translator->translate('Testimonials'),
-                'route' => 'home',
-            ),
-            'About_menu' => array(
-                'label' => $translator->translate('About'),
-                'route' => 'home',
-            ),
             'Contact_menu' => array(
-                'label' => $translator->translate('Contact Me'),
+                'label' => '&#9993;',
                 'uri' => 'mailto:steven.jalabert@gmail.com',
             ),
         ),
